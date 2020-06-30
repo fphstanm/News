@@ -24,8 +24,8 @@ class ChannelsListCell: UITableViewCell {
     
     
     func setup(_ source: Source) {
-        self.name.text = source.name
-        self.descr.text = source.descr
+        name.text = source.name
+        descr.text = source.descr
         
         self.source = source
     }
@@ -36,11 +36,11 @@ class ChannelsListCell: UITableViewCell {
             print("")
         case .favorite:
             print("")
-            //self.addToFavoriteView.isHidden = true
+            //addToFavoriteView.isHidden = true
         }
     }
     
     @IBAction func onFavouriteTapped(_ sender: Any) {
-        self.delegate?.changeFavouriteStatus(self)
+        delegate?.changeFavouriteStatus(self)
     }
 }

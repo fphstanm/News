@@ -35,15 +35,15 @@ class DataStore {
     func getSources(for scene: SourceType) -> [Source] {
         switch scene {
         case .all:
-            return self.allSources
+            return allSources
         case .favorite:
             let favoriteType = SourceType.favorite.rawValue
-            return self.allSources.filter { $0.sourceType == favoriteType } //self.favoriteSources.contains($0.id ?? "") }
+            return allSources.filter { $0.sourceType == favoriteType } //favoriteSources.contains($0.id ?? "") }
         }
     }
     
     func setAllSources(_ sources: [Source]) {
-        self.allSources = sources
+        allSources = sources
     }
     
     func changeTypeForSource(_ source: Source, _ type: SourceType) {
@@ -53,7 +53,7 @@ class DataStore {
         if !currentTypeEquealToFutureType {
             if let id = source.id {
                 //костыль
-                self.allSources.filter {
+                allSources.filter {
                     
                     if $0.id == id {
                         let newSource = source
@@ -79,7 +79,7 @@ class DataStore {
     //MARK: Articles
     
     func getArticles() -> [Article] {
-        return self.articles
+        return articles
     }
     
     func setArticles(_ articles: [Article]) {

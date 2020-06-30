@@ -15,8 +15,8 @@ class BaseViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        activityView.center = self.view.center
-        self.view.addSubview(activityView)
+        activityView.center = view.center
+        view.addSubview(activityView)
     }
     
     func showActivityIndicator() {
@@ -26,6 +26,6 @@ class BaseViewController: UIViewController {
     
     func hideActivityIndicator() {
         activityView.stopAnimating()
-        self.activityView.isHidden = true
+        activityView.isHidden = true
     }
 }

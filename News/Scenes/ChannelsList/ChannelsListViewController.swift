@@ -34,16 +34,16 @@ class ChannelsListViewController: UIViewController, UITabBarDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.channelsTableView.delegate = self
-        self.channelsTableView.dataSource = self
+        channelsTableView.delegate = self
+        channelsTableView.dataSource = self
         
-        self.setupScene()
-        self.setupSourcesData()
+        setupScene()
+        setupSourcesData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        if self.scene == .favorite {
-//            self.sources = Manager.shared.getFavouriteSources()
+        if scene == .favorite {
+//            sources = Manager.shared.getFavouriteSources()
             Manager.shared.getFavoriteSources({ (sources) in
                 self.sources = sources
                 self.channelsTableView.reloadData()
@@ -59,17 +59,17 @@ class ChannelsListViewController: UIViewController, UITabBarDelegate {
     //MARK: Setup
     
     func setupScene() {
-        switch self.tabBarController?.selectedIndex {
-        case 0: self.scene = .all
-        case 1: self.scene = .favorite
-        default: self.scene = .all
+        switch tabBarController?.selectedIndex {
+        case 0: scene = .all
+        case 1: scene = .favorite
+        default: scene = .all
         }
     }
     
     func setupSourcesData() {
         switch scene {
         case .all:
-            self.setupRefreshControl()
+            setupRefreshControl()
             Manager.shared.getAllSources { sources in
                self.sources = sources
                self.channelsTableView.reloadData()
@@ -88,14 +88,14 @@ class ChannelsListViewController: UIViewController, UITabBarDelegate {
     //MARK: RefreshControl
     
     func setupRefreshControl() {
-        self.refreshControl = UIRefreshControl()
-        self.refreshControl.addTarget(self, action: #selector(refreshData), for: .valueChanged)
-        self.channelsTableView.refreshControl = refreshControl
+        refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(refreshData), for: .valueChanged)
+        channelsTableView.refreshControl = refreshControl
     }
     
     @objc func refreshData(_ sender: UIRefreshControl) {
-        self.sources = []
-        self.channelsTableView.reloadData()
+        sources = []
+        channelsTableView.reloadData()
  
         Manager.shared.loadAllSources { sources in
             self.sources = sources
@@ -120,12 +120,12 @@ class ChannelsListViewController: UIViewController, UITabBarDelegate {
 extension ChannelsListViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.sources.count
+        return sources.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = self.channelsTableView.dequeueReusableCell(withIdentifier: "channelCell") as! ChannelsListCell
-        cell.setup(self.sources[indexPath.row])
+        let cell = channelsTableView.dequeueReusableCell(withIdentifier: "channelCell") as! ChannelsListCell
+        cell.setup(sources[indexPath.row])
         cell.tag = indexPath.row
         cell.delegate = self
         
@@ -142,7 +142,7 @@ extension ChannelsListViewController: ChannelsListCellDelegate {
         
         DataStore.shared.changeTypeForSource(sender.source!, .favorite)
         
-        switch self.scene {
+        switch scene {
         case .all: DataStore.shared.changeTypeForSource(sender.source!, .favorite) //TODO!
         case .favorite: DataStore.shared.changeTypeForSource(sender.source!, .all) //TODO!
         }

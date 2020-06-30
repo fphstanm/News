@@ -19,15 +19,15 @@ class NewsSearchViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.articlesSearchBar.delegate = self
-        self.articlesSearchBar.becomeFirstResponder()
+        articlesSearchBar.delegate = self
+        articlesSearchBar.becomeFirstResponder()
         
-        self.setupTableView()
+        setupTableView()
     }
 
     func setupTableView() {
-        self.articlesTableView.delegate = self
-        self.articlesTableView.dataSource = self
+        articlesTableView.delegate = self
+        articlesTableView.dataSource = self
         
         articlesTableView.tableFooterView = UIView()
         articlesTableView.keyboardDismissMode = .interactive
@@ -44,8 +44,8 @@ extension NewsSearchViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = self.articlesTableView.dequeueReusableCell(withIdentifier: "NewsListCell") as! NewsListCell
-        let article = self.artiles[indexPath.row]
+        let cell = articlesTableView.dequeueReusableCell(withIdentifier: "NewsListCell") as! NewsListCell
+        let article = artiles[indexPath.row]
         cell.setup(article.urlToImage!, article.title!, article.descr!)
         
         return cell
@@ -60,10 +60,10 @@ extension NewsSearchViewController: UITableViewDelegate, UITableViewDataSource {
 extension NewsSearchViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         let text = searchBar.text
-        self.artiles = []
+        artiles = []
         
-        self.showActivityIndicator()
-        self.articlesSearchBar.resignFirstResponder()
+        showActivityIndicator()
+        articlesSearchBar.resignFirstResponder()
         
         
         NetworkService.getArticles(searchText: text) { articles in
@@ -75,8 +75,8 @@ extension NewsSearchViewController: UISearchBarDelegate {
     }
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if searchText.isEmpty {
-            self.artiles = []
-            self.articlesTableView.reloadData()
+            artiles = []
+            articlesTableView.reloadData()
         }
     }
     

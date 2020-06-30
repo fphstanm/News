@@ -19,11 +19,11 @@ class NewsListViewController: UIViewController {
     let tempImage = "https://www.bigstockphoto.com/images/homepage/module-6.jpg"
     
     override func viewDidLoad() {
-        self.newsTableView.delegate = self
-        self.newsTableView.dataSource = self
+        newsTableView.delegate = self
+        newsTableView.dataSource = self
         
-        self.setupRefreshControl()
-        self.handleArticles()
+        setupRefreshControl()
+        handleArticles()
     }
     
     func handleArticles() {
@@ -42,14 +42,14 @@ class NewsListViewController: UIViewController {
     //MARK: RefreshControl
 
     func setupRefreshControl() {
-       self.refreshControl = UIRefreshControl()
-       self.refreshControl.addTarget(self, action: #selector(refreshData), for: .valueChanged)
-       self.newsTableView.refreshControl = refreshControl
+       refreshControl = UIRefreshControl()
+       refreshControl.addTarget(self, action: #selector(refreshData), for: .valueChanged)
+       newsTableView.refreshControl = refreshControl
     }
 
     @objc func refreshData(_ sender: UIRefreshControl) {
-        self.articles = []
-        self.newsTableView.reloadData()
+        articles = []
+        newsTableView.reloadData()
         
         NetworkService.getArticles { articles in
            self.articles = articles
@@ -69,8 +69,8 @@ extension NewsListViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = self.newsTableView.dequeueReusableCell(withIdentifier: "NewsListCell") as! NewsListCell
-        cell.setup(articles[indexPath.row].urlToImage ?? self.tempImage, articles[indexPath.row].title ?? "", articles[indexPath.row].descr ?? "")
+        let cell = newsTableView.dequeueReusableCell(withIdentifier: "NewsListCell") as! NewsListCell
+        cell.setup(articles[indexPath.row].urlToImage ?? tempImage, articles[indexPath.row].title ?? "", articles[indexPath.row].descr ?? "")
         
         return cell
     }
