@@ -28,45 +28,30 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="00W-wh-vAS">
-                                                    <rect key="frame" x="20" y="17" width="350" height="23"/>
+                                                    <rect key="frame" x="20" y="17" width="374" height="23"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SRK-7Z-hJm">
-                                                    <rect key="frame" x="20" y="50" width="350" height="21"/>
+                                                    <rect key="frame" x="20" y="50" width="374" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Xc-4q-pLS">
-                                                    <rect key="frame" x="374" y="32.5" width="24" height="24"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" secondItem="3Xc-4q-pLS" secondAttribute="height" multiplier="1:1" id="Fgf-YV-0De"/>
-                                                        <constraint firstAttribute="width" constant="24" id="SeU-ml-T6g"/>
-                                                    </constraints>
-                                                    <color key="tintColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <state key="normal" image="trash" catalog="system"/>
-                                                    <connections>
-                                                        <action selector="onFavouriteTapped:" destination="S8v-AQ-9YU" eventType="touchUpInside" id="gtT-N5-fQa"/>
-                                                    </connections>
-                                                </button>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="00W-wh-vAS" secondAttribute="trailing" id="09x-Hx-rPf"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="SRK-7Z-hJm" secondAttribute="trailing" id="1BT-xX-nw7"/>
                                                 <constraint firstItem="00W-wh-vAS" firstAttribute="top" secondItem="2pL-K7-xse" secondAttribute="topMargin" constant="6" id="4zs-EK-8hc"/>
                                                 <constraint firstItem="SRK-7Z-hJm" firstAttribute="leading" secondItem="2pL-K7-xse" secondAttribute="leadingMargin" id="7r9-Zf-yXX"/>
                                                 <constraint firstItem="SRK-7Z-hJm" firstAttribute="top" secondItem="00W-wh-vAS" secondAttribute="bottom" constant="10" id="81t-7F-XVf"/>
-                                                <constraint firstItem="3Xc-4q-pLS" firstAttribute="leading" secondItem="00W-wh-vAS" secondAttribute="trailing" constant="4" id="Dnq-3j-9Dj"/>
-                                                <constraint firstItem="3Xc-4q-pLS" firstAttribute="centerY" secondItem="2pL-K7-xse" secondAttribute="centerY" id="EqE-6w-tRr"/>
                                                 <constraint firstItem="00W-wh-vAS" firstAttribute="leading" secondItem="2pL-K7-xse" secondAttribute="leadingMargin" id="QNS-1f-ioV"/>
-                                                <constraint firstAttribute="trailing" secondItem="3Xc-4q-pLS" secondAttribute="trailing" constant="16" id="Xds-o8-ToI"/>
-                                                <constraint firstItem="3Xc-4q-pLS" firstAttribute="leading" secondItem="SRK-7Z-hJm" secondAttribute="trailing" constant="4" id="f0U-Yf-v30"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="SRK-7Z-hJm" secondAttribute="bottom" constant="7" id="taa-2D-Swx"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="descr" destination="SRK-7Z-hJm" id="0wm-Un-6J3"/>
-                                            <outlet property="favouriteButton" destination="3Xc-4q-pLS" id="zNL-ZA-AJ7"/>
                                             <outlet property="name" destination="00W-wh-vAS" id="Ycx-GV-m48"/>
                                         </connections>
                                     </tableViewCell>
@@ -326,44 +311,30 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aAk-N7-DpJ">
-                                                    <rect key="frame" x="20" y="17" width="350" height="23"/>
+                                                    <rect key="frame" x="20" y="17" width="374" height="23"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sqg-Yu-SeP">
-                                                    <rect key="frame" x="20" y="50" width="350" height="21"/>
+                                                    <rect key="frame" x="20" y="50" width="374" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fsm-tJ-Dtm">
-                                                    <rect key="frame" x="374" y="32.5" width="24" height="24"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="24" id="3Yh-WI-Jd2"/>
-                                                        <constraint firstAttribute="width" secondItem="Fsm-tJ-Dtm" secondAttribute="height" multiplier="1:1" id="70Q-Vc-FLe"/>
-                                                    </constraints>
-                                                    <state key="normal" image="favorite"/>
-                                                    <connections>
-                                                        <action selector="onFavouriteTapped:" destination="jk8-tl-Wse" eventType="touchUpInside" id="aEM-gD-ka7"/>
-                                                    </connections>
-                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="bottomMargin" secondItem="Sqg-Yu-SeP" secondAttribute="bottom" constant="7" id="9WX-Id-KLA"/>
                                                 <constraint firstItem="aAk-N7-DpJ" firstAttribute="leading" secondItem="dYO-Bg-n3i" secondAttribute="leadingMargin" id="KrD-Dx-nVx"/>
                                                 <constraint firstItem="Sqg-Yu-SeP" firstAttribute="top" secondItem="aAk-N7-DpJ" secondAttribute="bottom" constant="10" id="Lqu-La-fsq"/>
-                                                <constraint firstItem="Fsm-tJ-Dtm" firstAttribute="leading" secondItem="Sqg-Yu-SeP" secondAttribute="trailing" constant="4" id="Shs-Wu-Xsb"/>
-                                                <constraint firstItem="Fsm-tJ-Dtm" firstAttribute="centerY" secondItem="dYO-Bg-n3i" secondAttribute="centerY" id="XCq-Cj-fKs"/>
-                                                <constraint firstAttribute="trailing" secondItem="Fsm-tJ-Dtm" secondAttribute="trailing" constant="16" id="c8y-Kf-V4n"/>
-                                                <constraint firstItem="Fsm-tJ-Dtm" firstAttribute="leading" secondItem="aAk-N7-DpJ" secondAttribute="trailing" constant="4" id="iAk-NO-5Y9"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="aAk-N7-DpJ" secondAttribute="trailing" id="W1y-6U-DPQ"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Sqg-Yu-SeP" secondAttribute="trailing" id="h4h-tK-RsT"/>
                                                 <constraint firstItem="Sqg-Yu-SeP" firstAttribute="leading" secondItem="dYO-Bg-n3i" secondAttribute="leadingMargin" id="lIy-9B-qgx"/>
                                                 <constraint firstItem="aAk-N7-DpJ" firstAttribute="top" secondItem="dYO-Bg-n3i" secondAttribute="topMargin" constant="6" id="sET-i3-jJA"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="descr" destination="Sqg-Yu-SeP" id="K6Y-Nb-9zD"/>
-                                            <outlet property="favouriteButton" destination="Fsm-tJ-Dtm" id="0Fu-gr-4Iz"/>
                                             <outlet property="name" destination="aAk-N7-DpJ" id="5g4-a0-pac"/>
                                         </connections>
                                     </tableViewCell>
@@ -446,8 +417,4 @@
             <point key="canvasLocation" x="1205.7971014492755" y="-151.33928571428569"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="favorite" width="50" height="50"/>
-        <image name="trash" catalog="system" width="60" height="64"/>
-    </resources>
 </document>

@@ -16,7 +16,6 @@ class ChannelsListCell: UITableViewCell {
     
     @IBOutlet private weak var name: UILabel!
     @IBOutlet private weak var descr: UILabel!
-    @IBOutlet private weak var favouriteButton: UIButton!
     
     var source: Source?
     
@@ -38,9 +37,5 @@ class ChannelsListCell: UITableViewCell {
             print("")
             //addToFavoriteView.isHidden = true
         }
-    }
-    
-    @IBAction func onFavouriteTapped(_ sender: Any) {
-        delegate?.changeFavouriteStatus(self)
     }
 }
