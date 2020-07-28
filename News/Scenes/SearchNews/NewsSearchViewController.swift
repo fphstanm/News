@@ -46,7 +46,7 @@ extension NewsSearchViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = articlesTableView.dequeueReusableCell(withIdentifier: "NewsListCell") as! NewsListCell
         let article = artiles[indexPath.row]
-        cell.setup(article.urlToImage!, article.title!, article.descr!)
+        cell.setup(with: article)
         
         return cell
     }

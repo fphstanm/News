@@ -70,7 +70,8 @@ extension NewsListViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = newsTableView.dequeueReusableCell(withIdentifier: "NewsListCell") as! NewsListCell
-        cell.setup(articles[indexPath.row].urlToImage ?? tempImage, articles[indexPath.row].title ?? "", articles[indexPath.row].descr ?? "")
+        let article = articles[indexPath.row]
+        cell.setup(with: article)
         
         return cell
     }
