@@ -138,11 +138,19 @@ extension ChannelsListViewController: UITableViewDelegate, UITableViewDataSource
 
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
 
-        let addToFavoriteAction = UITableViewRowAction(style: .normal, title: "Add to favorite") { (rowAction, indexPath) in
-            //TODO: add action
+        let source = sources[indexPath.row]
+        let isSourceFavourite = DataStore.shared.getSources(for: .favorite).contains(source)
+        
+        let addToFavoriteColor = isSourceFavourite ? .lightGray : #colorLiteral(red: 1, green: 0.7768199313, blue: 0.001346542883, alpha: 1)
+        let addToFavoriteTitle = isSourceFavourite ? "Added" : "Add to favorite"
+        let addToFavoriteAction = UITableViewRowAction(style: .normal, title: addToFavoriteTitle) { rowAction, indexPath in
+            if !isSourceFavourite {
+                DataStore.shared.changeTypeForSource(source, .favorite)
+            }
         }
-        addToFavoriteAction.backgroundColor = #colorLiteral(red: 1, green: 0.7768199313, blue: 0.001346542883, alpha: 1)
 
+        addToFavoriteAction.backgroundColor = addToFavoriteColor
+        
         let deleteAction = UITableViewRowAction(style: .normal, title: "Delete") { [weak self] rowAction, indexPath in
             self?.sources.remove(at: indexPath.row)
             tableView.beginUpdates()
