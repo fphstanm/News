@@ -131,6 +131,36 @@ extension ChannelsListViewController: UITableViewDelegate, UITableViewDataSource
         
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        retun true
+    }
+
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+
+        let addToFavoriteAction = UITableViewRowAction(style: .normal, title: "Add to favorite") { (rowAction, indexPath) in
+            //TODO: add action
+        }
+        addToFavoriteAction.backgroundColor = #colorLiteral(red: 1, green: 0.7768199313, blue: 0.001346542883, alpha: 1)
+
+        let deleteAction = UITableViewRowAction(style: .normal, title: "Delete") { [weak self] rowAction, indexPath in
+            self?.sources.remove(at: indexPath.row)
+            tableView.beginUpdates()
+            tableView.deleteRows(at: [indexPath], with: .middle)
+            tableView.endUpdates()
+            
+        }
+        deleteAction.backgroundColor = .red
+        
+        var actions: [UITableViewRowAction] = []
+        
+        switch scene {
+        case .all: actions.append(addToFavoriteAction)
+        case .favorite: actions.append(deleteAction)
+        }
+        
+        return actions
+    }
 }
 
 
@@ -143,8 +173,11 @@ extension ChannelsListViewController: ChannelsListCellDelegate {
         DataStore.shared.changeTypeForSource(sender.source!, .favorite)
         
         switch scene {
-        case .all: DataStore.shared.changeTypeForSource(sender.source!, .favorite) //TODO!
-        case .favorite: DataStore.shared.changeTypeForSource(sender.source!, .all) //TODO!
+        case .all:
+            DataStore.shared.changeTypeForSource(sender.source!, .favorite) //TODO!
+        case .favorite:
+            DataStore.shared.changeTypeForSource(sender.source!, .all) //TODO!
+            
         }
     }
 }

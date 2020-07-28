@@ -332,7 +332,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sqg-Yu-SeP">
-                                                    <rect key="frame" x="20" y="44" width="350" height="21"/>
+                                                    <rect key="frame" x="20" y="50" width="350" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -350,14 +350,15 @@
                                                 </button>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Sqg-Yu-SeP" secondAttribute="bottom" constant="7" id="9WX-Id-KLA"/>
                                                 <constraint firstItem="aAk-N7-DpJ" firstAttribute="leading" secondItem="dYO-Bg-n3i" secondAttribute="leadingMargin" id="KrD-Dx-nVx"/>
+                                                <constraint firstItem="Sqg-Yu-SeP" firstAttribute="top" secondItem="aAk-N7-DpJ" secondAttribute="bottom" constant="10" id="Lqu-La-fsq"/>
                                                 <constraint firstItem="Fsm-tJ-Dtm" firstAttribute="leading" secondItem="Sqg-Yu-SeP" secondAttribute="trailing" constant="4" id="Shs-Wu-Xsb"/>
                                                 <constraint firstItem="Fsm-tJ-Dtm" firstAttribute="centerY" secondItem="dYO-Bg-n3i" secondAttribute="centerY" id="XCq-Cj-fKs"/>
                                                 <constraint firstAttribute="trailing" secondItem="Fsm-tJ-Dtm" secondAttribute="trailing" constant="16" id="c8y-Kf-V4n"/>
                                                 <constraint firstItem="Fsm-tJ-Dtm" firstAttribute="leading" secondItem="aAk-N7-DpJ" secondAttribute="trailing" constant="4" id="iAk-NO-5Y9"/>
                                                 <constraint firstItem="Sqg-Yu-SeP" firstAttribute="leading" secondItem="dYO-Bg-n3i" secondAttribute="leadingMargin" id="lIy-9B-qgx"/>
                                                 <constraint firstItem="aAk-N7-DpJ" firstAttribute="top" secondItem="dYO-Bg-n3i" secondAttribute="topMargin" constant="6" id="sET-i3-jJA"/>
-                                                <constraint firstItem="Sqg-Yu-SeP" firstAttribute="top" secondItem="aAk-N7-DpJ" secondAttribute="bottom" constant="4" id="sZ0-gG-7gA"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -378,7 +379,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="yps-GG-tc1"/>
                     </view>
-                    <navigationItem key="navigationItem" title="gfd" id="p04-SY-lZP"/>
+                    <navigationItem key="navigationItem" title="Title" id="p04-SY-lZP"/>
                     <connections>
                         <outlet property="channelsTableView" destination="5Jr-dk-1QE" id="QPy-U6-lGb"/>
                     </connections>
