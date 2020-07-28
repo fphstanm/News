@@ -173,7 +173,7 @@
             </objects>
             <point key="canvasLocation" x="2877" y="508"/>
         </scene>
-        <!--News Search View Controller-->
+        <!--Search-->
         <scene sceneID="XCV-Ei-gWa">
             <objects>
                 <viewController id="KDh-Fh-P6x" customClass="NewsSearchViewController" customModule="News" customModuleProvider="target" sceneMemberID="viewController">
@@ -261,7 +261,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Cul-tN-ebP"/>
                     </view>
-                    <navigationItem key="navigationItem" id="z7D-hG-h1x"/>
+                    <navigationItem key="navigationItem" title="Search" id="z7D-hG-h1x"/>
                     <connections>
                         <outlet property="articlesSearchBar" destination="OW6-zd-IOg" id="E8h-yh-bec"/>
                         <outlet property="articlesTableView" destination="FF7-2y-Tvk" id="RUf-MA-uob"/>

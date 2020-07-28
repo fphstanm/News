@@ -54,30 +54,35 @@ extension NewsSearchViewController: UITableViewDelegate, UITableViewDataSource {
 }
 
 
-//MARK: SearchBar logic
-
+//MARK: - SearchBar logic
 
 extension NewsSearchViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        let text = searchBar.text
-        artiles = []
+        guard let text = searchBar.text else { return }
         
-        showActivityIndicator()
         articlesSearchBar.resignFirstResponder()
-        
-        
-        NetworkService.getArticles(searchText: text) { articles in
-            self.artiles = articles
-            self.articlesTableView.reloadData()
-            self.hideActivityIndicator()
-            
-        }
+        searchArticles(by: text)
     }
+    
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if searchText.isEmpty {
             artiles = []
             articlesTableView.reloadData()
+        } else {
+            guard let text = searchBar.text else { return }
+            searchArticles(by: text)
         }
     }
     
+    private func searchArticles(by phrase: String) {
+        showActivityIndicator()
+        artiles = []
+        articlesTableView.reloadData()
+        
+        NetworkService.getArticles(searchText: phrase) { [weak self] articles in
+            self?.artiles = articles
+            self?.articlesTableView.reloadData()
+            self?.hideActivityIndicator()
+        }
+    }
 }
