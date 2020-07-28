@@ -137,20 +137,24 @@ extension ChannelsListViewController: UITableViewDelegate, UITableViewDataSource
     }
 
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-
-        let source = sources[indexPath.row]
-        let isSourceFavourite = DataStore.shared.getSources(for: .favorite).contains(source)
+        var actions: [UITableViewRowAction] = []
         
-        let addToFavoriteColor = isSourceFavourite ? .lightGray : #colorLiteral(red: 1, green: 0.7768199313, blue: 0.001346542883, alpha: 1)
-        let addToFavoriteTitle = isSourceFavourite ? "Added" : "Add to favorite"
-        let addToFavoriteAction = UITableViewRowAction(style: .normal, title: addToFavoriteTitle) { rowAction, indexPath in
-            if !isSourceFavourite {
-                DataStore.shared.changeTypeForSource(source, .favorite)
-            }
+        switch scene {
+        case .all:
+            let source = sources[indexPath.row]
+            let addToFavoriteAction = setupSourceFavoriteRowAction(for: source)
+            actions.append(addToFavoriteAction)
+        case .favorite:
+            let deleteAction = setupSourceDeleteRowAction(in: tableView)
+            actions.append(deleteAction)
         }
-
-        addToFavoriteAction.backgroundColor = addToFavoriteColor
         
+        return actions
+    }
+    
+    //MARK: TableView row actions
+    
+    private func setupSourceDeleteRowAction(in tableView: UITableView) -> UITableViewRowAction {
         let deleteAction = UITableViewRowAction(style: .normal, title: "Delete") { [weak self] rowAction, indexPath in
             self?.sources.remove(at: indexPath.row)
             tableView.beginUpdates()
@@ -160,14 +164,22 @@ extension ChannelsListViewController: UITableViewDelegate, UITableViewDataSource
         }
         deleteAction.backgroundColor = .red
         
-        var actions: [UITableViewRowAction] = []
+        return deleteAction
+    }
+    
+    private func setupSourceFavoriteRowAction(for source: Source) -> UITableViewRowAction {
+        let isSourceFavourite = DataStore.shared.getSources(for: .favorite).contains(source)
         
-        switch scene {
-        case .all: actions.append(addToFavoriteAction)
-        case .favorite: actions.append(deleteAction)
+        let addToFavoriteColor = isSourceFavourite ? .lightGray : #colorLiteral(red: 1, green: 0.7768199313, blue: 0.001346542883, alpha: 1)
+        let addToFavoriteTitle = isSourceFavourite ? "Added" : "Add to favorite"
+        let addToFavoriteAction = UITableViewRowAction(style: .normal, title: addToFavoriteTitle) { rowAction, indexPath in
+            if !isSourceFavourite {
+                DataStore.shared.changeTypeForSource(source, .favorite)
+            }
         }
+        addToFavoriteAction.backgroundColor = addToFavoriteColor
         
-        return actions
+        return addToFavoriteAction
     }
 }
 
