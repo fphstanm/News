@@ -6,7 +6,6 @@ target 'News' do
   use_frameworks!
   
   pod 'Alamofire','~> 4.9.1'
-  pod 'ObjectMapper'
   
   pod 'RealmSwift', '~> 4.3.2'
   pod 'Kingfisher'
