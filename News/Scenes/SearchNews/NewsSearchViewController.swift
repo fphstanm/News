@@ -51,6 +51,10 @@ extension NewsSearchViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        view.endEditing(true)
+    }
+    
 }
 
 
