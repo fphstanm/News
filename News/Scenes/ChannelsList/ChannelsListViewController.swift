@@ -125,7 +125,10 @@ extension ChannelsListViewController: UITableViewDelegate, UITableViewDataSource
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = channelsTableView.dequeueReusableCell(withIdentifier: "channelCell") as! ChannelsListCell
-        cell.setup(sources[indexPath.row])
+        let source = sources[indexPath.row]
+        let isFavorite = sources[indexPath.row].sourceType == SourceType.favorite.rawValue
+        
+        cell.setup(source)
         cell.tag = indexPath.row
         cell.delegate = self
         

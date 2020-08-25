@@ -294,7 +294,6 @@
         <!--Item 1-->
         <scene sceneID="yXR-t4-9b9">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="OBN-Rk-GqG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="8AQ-gE-5zJ" userLabel="Item 1" customClass="ChannelsListViewController" customModule="News" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QV1-7K-qNd">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -312,6 +311,13 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="89"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2j2-HX-7do">
+                                                    <rect key="frame" x="314" y="0.0" width="100" height="89"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="100" id="Bin-US-kCi"/>
+                                                    </constraints>
+                                                </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aAk-N7-DpJ">
                                                     <rect key="frame" x="20" y="17" width="374" height="23"/>
                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
@@ -330,6 +336,9 @@
                                                 <constraint firstAttribute="bottomMargin" secondItem="Sqg-Yu-SeP" secondAttribute="bottom" constant="7" id="9WX-Id-KLA"/>
                                                 <constraint firstAttribute="trailing" secondItem="aAk-N7-DpJ" secondAttribute="trailing" constant="20" id="Lf3-PK-29Z"/>
                                                 <constraint firstItem="Sqg-Yu-SeP" firstAttribute="top" secondItem="aAk-N7-DpJ" secondAttribute="bottom" constant="10" id="Lqu-La-fsq"/>
+                                                <constraint firstAttribute="bottom" secondItem="2j2-HX-7do" secondAttribute="bottom" id="amc-WG-y4E"/>
+                                                <constraint firstAttribute="trailing" secondItem="2j2-HX-7do" secondAttribute="trailing" id="jNE-GX-WUI"/>
+                                                <constraint firstItem="2j2-HX-7do" firstAttribute="top" secondItem="dYO-Bg-n3i" secondAttribute="top" id="kTI-3Z-9H0"/>
                                                 <constraint firstAttribute="trailing" secondItem="Sqg-Yu-SeP" secondAttribute="trailing" constant="20" id="kqE-JW-Z1R"/>
                                                 <constraint firstItem="aAk-N7-DpJ" firstAttribute="leading" secondItem="dYO-Bg-n3i" secondAttribute="leading" constant="20" id="lUM-xv-8Pp"/>
                                                 <constraint firstItem="aAk-N7-DpJ" firstAttribute="top" secondItem="dYO-Bg-n3i" secondAttribute="topMargin" constant="6" id="sET-i3-jJA"/>
@@ -337,6 +346,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="descr" destination="Sqg-Yu-SeP" id="K6Y-Nb-9zD"/>
+                                            <outlet property="favoriteIndicatingView" destination="2j2-HX-7do" id="ssh-lO-Uvi"/>
                                             <outlet property="name" destination="aAk-N7-DpJ" id="5g4-a0-pac"/>
                                         </connections>
                                     </tableViewCell>
@@ -357,6 +367,7 @@
                         <outlet property="channelsTableView" destination="5Jr-dk-1QE" id="QPy-U6-lGb"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OBN-Rk-GqG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1876.8115942028987" y="-151.33928571428569"/>
         </scene>
@@ -401,7 +412,6 @@
         <!--all-->
         <scene sceneID="0I0-y9-gs2">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="PpD-7C-j7e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vqQ-sQ-zhV" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="all" id="Faa-O7-7A8"/>
                     <toolbarItems/>
@@ -414,6 +424,7 @@
                         <segue destination="8AQ-gE-5zJ" kind="relationship" relationship="rootViewController" id="1e8-6d-y6W"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PpD-7C-j7e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1205.7971014492755" y="-151.33928571428569"/>
         </scene>

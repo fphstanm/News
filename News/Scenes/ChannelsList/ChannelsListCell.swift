@@ -16,26 +16,21 @@ class ChannelsListCell: UITableViewCell {
     
     @IBOutlet private weak var name: UILabel!
     @IBOutlet private weak var descr: UILabel!
+    @IBOutlet private weak var favoriteIndicatingView: UIView?
     
     var source: Source?
     
     var delegate: ChannelsListCellDelegate?
     
     
-    func setup(_ source: Source) {
+    func setup(_ source: Source, isFavorite: Bool = false) {
         name.text = source.name
         descr.text = source.descr
         
         self.source = source
-    }
-    
-    func setupFavouriteOption(_ type: ChannelListType) {
-        switch type {
-        case .all:
-            print("")
-        case .favorite:
-            print("")
-            //addToFavoriteView.isHidden = true
-        }
+        
+//        if isFavorite {
+//            favoriteIndicatingView?.applyGradient()
+//        }
     }
 }
