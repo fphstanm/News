@@ -91,6 +91,7 @@ class ChannelsListViewController: UIViewController, UITabBarDelegate {
         refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: #selector(refreshData), for: .valueChanged)
         channelsTableView.refreshControl = refreshControl
+        refreshControl.isEnabled = scene == .all
     }
     
     @objc func refreshData(_ sender: UIRefreshControl) {
@@ -153,6 +154,15 @@ extension ChannelsListViewController: UITableViewDelegate, UITableViewDataSource
         }
         
         return actions
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let className = String(describing: NewsListViewController.self)
+        let storyboard = UIStoryboard(name: className, bundle: nil)
+        guard let newsVC = storyboard.instantiateViewController(withIdentifier: className) as? NewsListViewController else { return }
+        
+        newsVC.source = sources[indexPath.row]
+        navigationController?.pushViewController(newsVC, animated: true)
     }
     
     //MARK: TableView row actions

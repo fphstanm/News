@@ -57,6 +57,7 @@ class Manager {
         return RealmService.readArticles()
     }
     
+    //TODO: переписать под универсальный метод, который принимает айдишки
     func getFavoriteArticles(_ completion: @escaping (([Article]) -> ())) {
         
         let favoriteSources = DataStore.shared.getSources(for: .favorite)
@@ -72,6 +73,18 @@ class Manager {
             completion(articles)
         }
         
+    }
+    
+    func getArticles(from sources: [Source], _ completion: @escaping (([Article]) -> ())) {
+        var sourcesIDs: [String] = []
+        sources.forEach {
+            guard let id = $0.id else { return }
+            sourcesIDs.append(id)
+        }
+        
+        NetworkService.getArticles(sourcesIDs) { [weak self] (articles) in
+            completion(articles)
+        }
     }
 
     func SaveAll() {

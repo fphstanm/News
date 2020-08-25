@@ -15,6 +15,7 @@ class NewsListViewController: UIViewController {
     private lazy var refreshControl = UIRefreshControl()
 
     var articles: [Article] = []
+    var source: Source?
     
     let tempImage = "https://www.bigstockphoto.com/images/homepage/module-6.jpg"
     
@@ -23,10 +24,15 @@ class NewsListViewController: UIViewController {
         newsTableView.dataSource = self
         
         setupRefreshControl()
-        handleArticles()
+        
+        if let source = source {
+            handleArticles(for: source)
+        } else {
+            handleArticles()
+        }
     }
     
-    func handleArticles() {
+    private func handleArticles() {
         let realm = try! Realm()
         let articles = Array(realm.objects(Article.self))
         self.articles = articles
@@ -37,6 +43,13 @@ class NewsListViewController: UIViewController {
             self.newsTableView.reloadData()
         }
 
+    }
+    
+    private func handleArticles(for source: Source) {
+        Manager.shared.getArticles(from: [source]) { articles in
+            self.articles = articles
+            self.newsTableView.reloadData()
+        }
     }
     
     //MARK: RefreshControl
