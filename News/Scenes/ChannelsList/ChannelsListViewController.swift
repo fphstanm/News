@@ -157,6 +157,7 @@ extension ChannelsListViewController: UITableViewDelegate, UITableViewDataSource
     private func setupSourceDeleteRowAction(in tableView: UITableView) -> UITableViewRowAction {
         let deleteAction = UITableViewRowAction(style: .normal, title: "Delete") { [weak self] rowAction, indexPath in
             self?.sources.remove(at: indexPath.row)
+            self?.changeFavouriteStatus(tableView.cellForRow(at: indexPath) as! ChannelsListCell)
             tableView.beginUpdates()
             tableView.deleteRows(at: [indexPath], with: .middle)
             tableView.endUpdates()
@@ -189,14 +190,14 @@ extension ChannelsListViewController: UITableViewDelegate, UITableViewDataSource
 
 extension ChannelsListViewController: ChannelsListCellDelegate {
     func changeFavouriteStatus(_ sender: ChannelsListCell) {
-        
-        DataStore.shared.changeTypeForSource(sender.source!, .favorite)
+        guard let source = sender.source else { return }
+        DataStore.shared.changeTypeForSource(source, .favorite)
         
         switch scene {
         case .all:
-            DataStore.shared.changeTypeForSource(sender.source!, .favorite) //TODO!
+            DataStore.shared.changeTypeForSource(source, .favorite)
         case .favorite:
-            DataStore.shared.changeTypeForSource(sender.source!, .all) //TODO!
+            DataStore.shared.changeTypeForSource(source, .all)
             
         }
     }
