@@ -12,7 +12,7 @@ hooks/
 info/
 .DS_Store
 News.xcworkspace/
-
+News.xcworkspace
 
 ## Various settings
 *.pbxuser

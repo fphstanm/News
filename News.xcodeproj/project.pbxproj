@@ -16,6 +16,8 @@
 		EF5C3998243883B2007BAD89 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF5C3997243883B2007BAD89 /* DataStore.swift */; };
 		EF5C399A24388654007BAD89 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF5C399924388654007BAD89 /* APIRequest.swift */; };
 		EF5C399C24388A1C007BAD89 /* SourceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF5C399B24388A1C007BAD89 /* SourceModel.swift */; };
+		EFA3AC2624F5ABE8002B51A8 /* ArticleDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA3AC2524F5ABE8002B51A8 /* ArticleDetailsViewController.swift */; };
+		EFA3AC2824F5ABF4002B51A8 /* ArticleDetailsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EFA3AC2724F5ABF4002B51A8 /* ArticleDetailsViewController.storyboard */; };
 		EFB1B50724F595A500E5FDED /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB1B50624F595A500E5FDED /* UIView.swift */; };
 		EFB1B50A24F59F9C00E5FDED /* NewsListViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EFB1B50924F59F9C00E5FDED /* NewsListViewController.storyboard */; };
 		EFE944BD2455D863000956C7 /* RealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE944BC2455D863000956C7 /* RealmService.swift */; };
@@ -42,6 +44,8 @@
 		EF5C3997243883B2007BAD89 /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
 		EF5C399924388654007BAD89 /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
 		EF5C399B24388A1C007BAD89 /* SourceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceModel.swift; sourceTree = "<group>"; };
+		EFA3AC2524F5ABE8002B51A8 /* ArticleDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetailsViewController.swift; sourceTree = "<group>"; };
+		EFA3AC2724F5ABF4002B51A8 /* ArticleDetailsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ArticleDetailsViewController.storyboard; sourceTree = "<group>"; };
 		EFB1B50624F595A500E5FDED /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		EFB1B50924F59F9C00E5FDED /* NewsListViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewsListViewController.storyboard; sourceTree = "<group>"; };
 		EFE944BC2455D863000956C7 /* RealmService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmService.swift; sourceTree = "<group>"; };
@@ -105,6 +109,7 @@
 		EF5C398F24388284007BAD89 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				EFA3AC2424F5ABBE002B51A8 /* ArticleDetails */,
 				EFF4C34E247AA89C00E7EBF3 /* SearchNews */,
 				EF3F6B99244CB42400B7BCCC /* NewsList */,
 				EFEE791D2430870500CF602F /* ChannelsList */,
@@ -131,6 +136,15 @@
 				EF3F6B97244CAAF300B7BCCC /* ArticleModel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		EFA3AC2424F5ABBE002B51A8 /* ArticleDetails */ = {
+			isa = PBXGroup;
+			children = (
+				EFA3AC2524F5ABE8002B51A8 /* ArticleDetailsViewController.swift */,
+				EFA3AC2724F5ABF4002B51A8 /* ArticleDetailsViewController.storyboard */,
+			);
+			path = ArticleDetails;
 			sourceTree = "<group>";
 		};
 		EFB1B50424F5957900E5FDED /* Util */ = {
@@ -266,6 +280,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EFB1B50A24F59F9C00E5FDED /* NewsListViewController.storyboard in Resources */,
+				EFA3AC2824F5ABF4002B51A8 /* ArticleDetailsViewController.storyboard in Resources */,
 				EFEE79142430782700CF602F /* LaunchScreen.storyboard in Resources */,
 				EFEE79112430782700CF602F /* Assets.xcassets in Resources */,
 				EFEE790F2430781C00CF602F /* Main.storyboard in Resources */,
@@ -332,6 +347,7 @@
 				EF3F6B9D244CB45000B7BCCC /* NewsListCell.swift in Sources */,
 				EF3F6B9B244CB43900B7BCCC /* NewsListViewController.swift in Sources */,
 				EF3F6B98244CAAF300B7BCCC /* ArticleModel.swift in Sources */,
+				EFA3AC2624F5ABE8002B51A8 /* ArticleDetailsViewController.swift in Sources */,
 				EFE944BF2455D87E000956C7 /* Manager.swift in Sources */,
 				EF5C399C24388A1C007BAD89 /* SourceModel.swift in Sources */,
 				EF338AC8247AC3640075A2D7 /* BaseViewController.swift in Sources */,

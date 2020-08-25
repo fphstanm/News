@@ -89,4 +89,15 @@ extension NewsListViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let className = String(describing: ArticleDetailsViewController.self)
+        let storyboard = UIStoryboard(name: className, bundle: nil)
+        guard let articleDetailsVC = storyboard.instantiateViewController(withIdentifier: className) as? ArticleDetailsViewController else { return }
+        
+        let article = articles[indexPath.row]
+        articleDetailsVC.setup(with: article)
+        
+        navigationController?.modalPresentationStyle = .overCurrentContext
+        navigationController?.present(articleDetailsVC, animated: true, completion: {})
+    }
 }
