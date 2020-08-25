@@ -18,7 +18,7 @@ class NewsListCell: UITableViewCell {
     func setup(with article: Article) {
         
         newsTitle.text = article.title
-        newsDescription.text = article.description
+        newsDescription.text = article.descr
         
         guard let imageUrlString = article.urlToImage else { return }
         setupImage(imageUrlString: imageUrlString)

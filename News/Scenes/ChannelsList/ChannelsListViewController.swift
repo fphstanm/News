@@ -191,7 +191,6 @@ extension ChannelsListViewController: UITableViewDelegate, UITableViewDataSource
 extension ChannelsListViewController: ChannelsListCellDelegate {
     func changeFavouriteStatus(_ sender: ChannelsListCell) {
         guard let source = sender.source else { return }
-        DataStore.shared.changeTypeForSource(source, .favorite)
         
         switch scene {
         case .all:
