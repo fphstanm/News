@@ -22,6 +22,9 @@ class ChannelsListCell: UITableViewCell {
     
     var delegate: ChannelsListCellDelegate?
     
+    override func prepareForReuse() {
+        favoriteIndicatingView?.layer.sublayers = nil
+    }
     
     func setup(_ source: Source, isFavorite: Bool = false) {
         name.text = source.name
@@ -29,8 +32,11 @@ class ChannelsListCell: UITableViewCell {
         
         self.source = source
         
-//        if isFavorite {
-//            favoriteIndicatingView?.applyGradient()
-//        }
+        if isFavorite {
+            favoriteIndicatingView?.applyGradient()
+            favoriteIndicatingView?.roundCorners(cornerRadius: 40)
+            favoriteIndicatingView?.alpha = 0.4
+        }
     }
+    
 }

@@ -48,7 +48,8 @@ class ChannelsListViewController: UIViewController, UITabBarDelegate {
                 self.sources = sources
                 self.channelsTableView.reloadData()
             })
-            
+        } else {
+            channelsTableView.reloadData()
         }
     }
     
@@ -129,7 +130,7 @@ extension ChannelsListViewController: UITableViewDelegate, UITableViewDataSource
         let source = sources[indexPath.row]
         let isFavorite = sources[indexPath.row].sourceType == SourceType.favorite.rawValue
         
-        cell.setup(source)
+        cell.setup(source, isFavorite: isFavorite)
         cell.tag = indexPath.row
         cell.delegate = self
         
