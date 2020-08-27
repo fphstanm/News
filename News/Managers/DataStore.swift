@@ -43,7 +43,7 @@ class DataStore {
     }
     
     func setAllSources(_ sources: [Source]) {
-        allSources = sources
+        allSources = formSourcesWithSavedFavoriteStatus(from: allSources, to: sources)
     }
     
     func changeTypeForSource(_ source: Source, _ type: SourceType) {
@@ -84,6 +84,25 @@ class DataStore {
     
     func setArticles(_ articles: [Article]) {
         self.articles = articles
+    }
+    
+    // MARK: - Private methods
+    
+    private func formSourcesWithSavedFavoriteStatus(from original: [Source], to new: [Source]) -> [Source] {
+        let sourcesWithSavedFavorites = new
+        original.forEach { source in
+            let favoriteType = SourceType.favorite.rawValue
+            if source.sourceType == favoriteType {
+                sourcesWithSavedFavorites.forEach { resultSource in
+                    if resultSource.id == source.id {
+                        resultSource.sourceType = source.sourceType
+                        return
+                    }
+                }
+            }
+        }
+        
+        return sourcesWithSavedFavorites
     }
     
 }
