@@ -136,7 +136,8 @@ extension ChannelsListViewController: UITableViewDelegate, UITableViewDataSource
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = channelsTableView.dequeueReusableCell(withIdentifier: "channelCell") as! ChannelsListCell
         let source = sources[indexPath.row]
-        let isFavorite = sources[indexPath.row].sourceType == SourceType.favorite.rawValue
+        var isFavorite = sources[indexPath.row].sourceType == SourceType.favorite.rawValue
+        isFavorite = isFavorite && scene == .all
         
         cell.setup(source, isFavorite: isFavorite)
         cell.tag = indexPath.row
