@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NewsSearchViewController: BaseViewController {
+class ArticlesSearchViewController: BaseViewController {
     
     @IBOutlet private weak var articlesTableView: UITableView!
     @IBOutlet private weak var articlesSearchBar: UISearchBar!
@@ -38,7 +38,7 @@ class NewsSearchViewController: BaseViewController {
 //MARK: TableView logic
 
 
-extension NewsSearchViewController: UITableViewDelegate, UITableViewDataSource {
+extension ArticlesSearchViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return artiles.count
     }
@@ -60,7 +60,7 @@ extension NewsSearchViewController: UITableViewDelegate, UITableViewDataSource {
 
 //MARK: - SearchBar logic
 
-extension NewsSearchViewController: UISearchBarDelegate {
+extension ArticlesSearchViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let text = searchBar.text else { return }
         
