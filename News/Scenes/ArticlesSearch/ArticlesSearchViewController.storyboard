@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Articles Search View Controller-->
+        <!--Search-->
         <scene sceneID="B5U-eX-lT6">
             <objects>
                 <viewController storyboardIdentifier="ArticlesSearchViewController" id="7sd-H3-Emj" customClass="ArticlesSearchViewController" customModule="News" customModuleProvider="target" sceneMemberID="viewController">
@@ -96,7 +96,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="EK9-Qj-nAI"/>
                     </view>
-                    <navigationItem key="navigationItem" id="ftu-cu-SFQ"/>
+                    <navigationItem key="navigationItem" title="Search" id="ftu-cu-SFQ"/>
                     <connections>
                         <outlet property="articlesSearchBar" destination="wB4-dK-09D" id="bzj-fv-HHk"/>
                         <outlet property="articlesTableView" destination="RKU-aF-SVk" id="gtI-QG-2fM"/>
@@ -106,11 +106,11 @@
             </objects>
             <point key="canvasLocation" x="859.4202898550725" y="44.866071428571423"/>
         </scene>
-        <!--Item-->
+        <!--Search-->
         <scene sceneID="3gO-o4-fee">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="kfv-ep-xkS" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="cW8-79-R4Z"/>
+                    <tabBarItem key="tabBarItem" title="Search" id="cW8-79-R4Z"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="LdN-1x-zwo">

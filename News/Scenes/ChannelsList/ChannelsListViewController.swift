@@ -39,6 +39,7 @@ class ChannelsListViewController: UIViewController, UITabBarDelegate {
         
         setupScene()
         setupSourcesData()
+        setupTitles()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -57,13 +58,20 @@ class ChannelsListViewController: UIViewController, UITabBarDelegate {
         RealmService.writeSources(DataStore.shared.getSources(for: .all))
     }
     
-    //MARK: Setup
+    //MARK: Setup methods
     
     func setupScene() {
         switch tabBarController?.selectedIndex {
         case 0: scene = .all
         case 1: scene = .favorite
         default: scene = .all
+        }
+    }
+    
+    func setupTitles() {
+        switch scene {
+        case .all: title = "All"
+        case .favorite: title = "Favorite"
         }
     }
     
