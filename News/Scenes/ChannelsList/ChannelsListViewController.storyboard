@@ -79,7 +79,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="P6H-aa-fNm"/>
                     </view>
-                    <navigationItem key="navigationItem" title="All" id="HvX-1s-Kkm"/>
+                    <navigationItem key="navigationItem" title="All" id="HvX-1s-Kkm">
+                        <barButtonItem key="rightBarButtonItem" title="Show News" id="ECu-Z4-MWf">
+                            <connections>
+                                <action selector="showNewsButtonTapped:" destination="fG7-mc-0qj" id="fYQ-Hx-rWh"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="channelsTableView" destination="3w2-RG-T0w" id="izz-ru-fZE"/>
                     </connections>

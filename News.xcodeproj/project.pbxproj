@@ -13,6 +13,7 @@
 		EF3F6B98244CAAF300B7BCCC /* ArticleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF3F6B97244CAAF300B7BCCC /* ArticleModel.swift */; };
 		EF3F6B9B244CB43900B7BCCC /* NewsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF3F6B9A244CB43900B7BCCC /* NewsListViewController.swift */; };
 		EF3F6B9D244CB45000B7BCCC /* NewsListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF3F6B9C244CB45000B7BCCC /* NewsListCell.swift */; };
+		EF4544A72500455600557D23 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4544A62500455600557D23 /* UIViewController.swift */; };
 		EF54D450250024CD00C03DCC /* ArticlesSearchViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF54D44F250024CD00C03DCC /* ArticlesSearchViewController.storyboard */; };
 		EF5C399624388391007BAD89 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF5C399524388391007BAD89 /* NetworkService.swift */; };
 		EF5C3998243883B2007BAD89 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF5C3997243883B2007BAD89 /* DataStore.swift */; };
@@ -43,6 +44,7 @@
 		EF3F6B97244CAAF300B7BCCC /* ArticleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleModel.swift; sourceTree = "<group>"; };
 		EF3F6B9A244CB43900B7BCCC /* NewsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsListViewController.swift; sourceTree = "<group>"; };
 		EF3F6B9C244CB45000B7BCCC /* NewsListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsListCell.swift; sourceTree = "<group>"; };
+		EF4544A62500455600557D23 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		EF54D44F250024CD00C03DCC /* ArticlesSearchViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ArticlesSearchViewController.storyboard; sourceTree = "<group>"; };
 		EF5C399524388391007BAD89 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		EF5C3997243883B2007BAD89 /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
@@ -172,6 +174,7 @@
 			isa = PBXGroup;
 			children = (
 				EFB1B50624F595A500E5FDED /* UIView.swift */,
+				EF4544A62500455600557D23 /* UIViewController.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -354,6 +357,7 @@
 			files = (
 				EFB1B50724F595A500E5FDED /* UIView.swift in Sources */,
 				EF5C3998243883B2007BAD89 /* DataStore.swift in Sources */,
+				EF4544A72500455600557D23 /* UIViewController.swift in Sources */,
 				EFE944BD2455D863000956C7 /* RealmService.swift in Sources */,
 				EF5C399624388391007BAD89 /* NetworkService.swift in Sources */,
 				EFEE791F2430881400CF602F /* ChannelsListCell.swift in Sources */,

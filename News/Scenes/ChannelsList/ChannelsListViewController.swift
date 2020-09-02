@@ -115,10 +115,17 @@ class ChannelsListViewController: UIViewController, UITabBarDelegate {
         }
     }
     
+    // MARK: Navigation
+    
+    private func showArticlesListScreen() {
+        guard let newsVC = initControllerFromStoryboard(of: NewsListViewController.self) as? NewsListViewController else { return }
+        navigationController?.pushViewController(newsVC, animated: true)
+    }
+    
+    // MARK: @IBActions
     
     @IBAction func showNewsButtonTapped(_ sender: Any) {
-        RealmService.writeSources(DataStore.shared.getSources(for: .all))
-        RealmService.writeArticles(DataStore.shared.getArticles())
+        showArticlesListScreen()
     }
     
 }
@@ -224,4 +231,3 @@ extension ChannelsListViewController: ChannelsListCellDelegate {
         }
     }
 }
-    
