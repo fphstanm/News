@@ -112,7 +112,6 @@
 			children = (
 				EFEE79072430781C00CF602F /* AppDelegate.swift */,
 				EFEE79092430781C00CF602F /* SceneDelegate.swift */,
-				EF338AC7247AC3640075A2D7 /* BaseViewController.swift */,
 				EFEE79102430782700CF602F /* Assets.xcassets */,
 				EFEE79122430782700CF602F /* LaunchScreen.storyboard */,
 				EFEE79152430782700CF602F /* Info.plist */,
@@ -132,23 +131,23 @@
 			path = Scenes;
 			sourceTree = "<group>";
 		};
-		EF5C3992243882C9007BAD89 /* Managers */ = {
+		EF5C3992243882C9007BAD89 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				EF5C399524388391007BAD89 /* NetworkService.swift */,
-				EFE944BC2455D863000956C7 /* RealmService.swift */,
+				EF5C399924388654007BAD89 /* APIRequest.swift */,
 				EF5C3997243883B2007BAD89 /* DataStore.swift */,
 				EFE944BE2455D87E000956C7 /* Manager.swift */,
-				EF5C399924388654007BAD89 /* APIRequest.swift */,
+				EF5C399524388391007BAD89 /* NetworkService.swift */,
+				EFE944BC2455D863000956C7 /* RealmService.swift */,
 			);
-			path = Managers;
+			path = Services;
 			sourceTree = "<group>";
 		};
 		EF5C3994243882ED007BAD89 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				EF5C399B24388A1C007BAD89 /* SourceModel.swift */,
 				EF3F6B97244CAAF300B7BCCC /* ArticleModel.swift */,
+				EF5C399B24388A1C007BAD89 /* SourceModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -162,19 +161,11 @@
 			path = ArticleDetails;
 			sourceTree = "<group>";
 		};
-		EFB1B50424F5957900E5FDED /* Util */ = {
-			isa = PBXGroup;
-			children = (
-				EFB1B50524F5958800E5FDED /* UI */,
-			);
-			path = Util;
-			sourceTree = "<group>";
-		};
 		EFB1B50524F5958800E5FDED /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				EFB1B50624F595A500E5FDED /* UIView.swift */,
 				EF4544A62500455600557D23 /* UIViewController.swift */,
+				EFB1B50624F595A500E5FDED /* UIView.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -200,9 +191,10 @@
 		EFEE79062430781C00CF602F /* News */ = {
 			isa = PBXGroup;
 			children = (
-				EFB1B50424F5957900E5FDED /* Util */,
+				EFF953F625040E82009DF18C /* Extensions */,
 				EF5C398F24388284007BAD89 /* Scenes */,
-				EF5C3992243882C9007BAD89 /* Managers */,
+				EFF953F82504100C009DF18C /* Base Classes */,
+				EF5C3992243882C9007BAD89 /* Services */,
 				EF5C3994243882ED007BAD89 /* Models */,
 				EF5C398B24388193007BAD89 /* Other */,
 			);
@@ -226,6 +218,22 @@
 				EF54D44F250024CD00C03DCC /* ArticlesSearchViewController.storyboard */,
 			);
 			path = ArticlesSearch;
+			sourceTree = "<group>";
+		};
+		EFF953F625040E82009DF18C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				EFB1B50524F5958800E5FDED /* UI */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		EFF953F82504100C009DF18C /* Base Classes */ = {
+			isa = PBXGroup;
+			children = (
+				EF338AC7247AC3640075A2D7 /* BaseViewController.swift */,
+			);
+			path = "Base Classes";
 			sourceTree = "<group>";
 		};
 		F080E1B7DE06C12E6B1C5967 /* Frameworks */ = {
