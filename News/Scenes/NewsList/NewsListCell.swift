@@ -30,13 +30,9 @@ class NewsListCell: UITableViewCell {
                 if ImageCache.default.isCached(forKey: imageUrlString) {
                     ImageCache.default.retrieveImage(forKey: imageUrlString) { result in
                         switch result {
-                        case .success(let value):
-                            
-
+                        case .success(_):
                             let resource = ImageResource(downloadURL: URL(string: imageUrlString)!, cacheKey: imageUrlString)
                             self.newsImage.kf.setImage(with: resource)
-        //                    self.newsImage.kf.setimage
-
                         case .failure(let error):
                             print(error)
                         }
@@ -44,20 +40,5 @@ class NewsListCell: UITableViewCell {
                 } else {
                     self.newsImage.kf.setImage(with: URL(string: imageUrlString))
                 }
-        //        if let imageUrl = URL(string: image) {
-        //            let resource = ImageResource(downloadURL: URL(string: image)!, cacheKey: image)
-        //
-        //            self.newsImage.kf.setImage(with: resource)
-        //        }
-                
-                
-                
-        //        self.newsImage.kf.setImage(with: URL(string: image),
-        //                                   progressBlock: { (re, to) in
-        //                                    print(re)
-        //        })
-        //        self.newsImage.kf.setImage(with: URL(string: image), placeholder: nil, options: nil, progressBlock: { (received, total) in
-        //            print("\(indexPath.item + 1): \(received)/\(total)")
-        //        }, completionHandler: nil)
     }
 }

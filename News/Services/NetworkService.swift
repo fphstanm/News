@@ -91,16 +91,5 @@ class NetworkService {
     static func isInternetConnectionAvailable() -> Bool {
         NetworkReachabilityManager()?.isReachable ?? false
     }
-    
-    //    func get(at route: ApiRoute) -> DataRequest {
-    //        return request(route, method: .get, encoding: URLEncoding.default)
-    //    }
-    //
-    //    func request(at route: ApiRoute, method: HTTPMethod, params: Parameters = [:], encoding: ParameterEncoding) -> DataRequest {
-    //        let url = route.url()
-    //        return Alamofire
-    //            .request(url, method: method, parameters: params, encoding: encoding)
-    //            .validate()
-    //    }
         
 }
